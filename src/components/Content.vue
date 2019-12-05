@@ -11,7 +11,11 @@
           {{ blog.content }}
         </p>
         <hr />
-        <span> Data de criação: {{ blog.date }} </span> <br />
+        <span>
+          Data de criação:
+          {{ blog.date | moment("ddd - DD/MM/YYYY") }}
+        </span>
+        <br />
         <span> Site original: {{ blog.source }} </span> <br />
         <span>
           Quantidade de comentários:
@@ -29,6 +33,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 import axios from "axios";
 
+const baseUrl =
+  "https://gist.githubusercontent.com/leocabrallce/6b54d252d62832de2c6166b08ae7727a/raw/5342daff7ea0b030488943f2cd45455534e30112/noticias.json";
+
 export default {
   name: "Content",
   data: function() {
@@ -38,9 +45,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get(
-        "https://gist.githubusercontent.com/leocabrallce/6b54d252d62832de2c6166b08ae7727a/raw/5342daff7ea0b030488943f2cd45455534e30112/noticias.json"
-      );
+      const res = await axios.get(baseUrl);
       this.blogs = res.data;
     } catch (e) {
       console.error(e);
@@ -49,7 +54,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #photo {
   width: 30px;

@@ -21,4 +21,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scope>
+html,
+body {
+  box-sizing: border-box;
+  background-color: rgb(232, 252, 237);
+}
+</style>

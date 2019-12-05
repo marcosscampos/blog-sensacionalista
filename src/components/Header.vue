@@ -29,7 +29,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #photo {
   width: 30px;
@@ -37,5 +36,9 @@ export default {
 }
 h1 {
   padding-top: 10px;
+}
+
+nav {
+  background-color: rgb(197, 253, 208) !important;
 }
 </style>
