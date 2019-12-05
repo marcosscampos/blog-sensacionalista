@@ -13,11 +13,7 @@ import Header from "./components/Header.vue";
 
 export default {
   name: "app",
-  components: {
-    Content,
-    Footer,
-    Header
-  }
+  components: { Content, Footer, Header }
 };
 </script>
 
@@ -26,5 +22,12 @@ html,
 body {
   box-sizing: border-box;
   background-color: rgb(232, 252, 237);
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
 }
 </style>
