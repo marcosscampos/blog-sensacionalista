@@ -1,24 +1,13 @@
-# vue-app
+# Blog Sensacionalista
 
-## Project setup
+É um blog feito todo em Vue.js, bootstrap e font awesome.
+
+## Pra poder instalar as dependências, abra o terminal e digite: 
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### E depois só digitar o seguinte comando para ver o site funcionando sem erros:
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
