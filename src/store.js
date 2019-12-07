@@ -14,7 +14,6 @@ export default new vuex.Store({
     async CarregaPost({ commit }) {
       await axios.get(BaseUrl)
         .then(data => {
-          console.log(data.data)
           let posts = data.data
           commit('SET_POSTS', posts)
         })

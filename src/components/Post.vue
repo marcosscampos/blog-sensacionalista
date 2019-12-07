@@ -5,6 +5,7 @@
         <h1>{{ item.title }}</h1>
         <p>
           {{ item.content.slice(0, 350) + "..." }}
+          <router-link :to="'/posts/' + item.title[item]">Ler Mais</router-link>
         </p>
         <hr />
         <div class="nav flex-column">
