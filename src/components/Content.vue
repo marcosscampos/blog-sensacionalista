@@ -6,7 +6,6 @@
         <span class="badge badge-info">{{ posts.length }}</span>
       </p>
       <Post />
-      <router-view></router-view>
     </div>
   </div>
 </template>

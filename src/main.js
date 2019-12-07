@@ -4,7 +4,7 @@ import VueMomment from 'vue-moment'
 import moment from 'moment-timezone'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-import Post from './components/Post.vue'
+import Content from './components/Content.vue'
 import store from './store'
 
 
@@ -15,14 +15,14 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 /* ==== */
 
-const routes = [
-  { path: '/post/:id', component: Post }
-]
-
 const router = new VueRouter({
-  routes
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    { path: '/', name: 'Home', component: Content },
+    { path: '/posts/:index', name: 'post', component: () => import('./components/Post.vue') }
+  ]
 })
-
 
 new Vue({
   render: h => h(App),

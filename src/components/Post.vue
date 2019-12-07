@@ -1,11 +1,14 @@
 <template>
   <div>
-    <div v-for="item in posts" v-bind:key="item.id">
+    <div v-for="(item, index) in posts" v-bind:key="item.index">
       <section class="list-group-item">
         <h1>{{ item.title }}</h1>
         <p>
           {{ item.content.slice(0, 350) + "..." }}
-          <router-link :to="'/posts/' + item.title">Ler Mais</router-link>
+          <router-link :to="`/${index}/`">
+            Ler Mais
+          </router-link>
+          <Posts />
         </p>
         <hr />
         <div class="nav flex-column">
@@ -25,8 +28,12 @@
 
 <script>
 import { mapState } from "vuex";
+import Posts from "../views/Posts";
 
 export default {
+  components: {
+    Posts
+  },
   name: "posts",
   data: function() {
     return {
