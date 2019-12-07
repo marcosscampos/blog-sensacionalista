@@ -3,9 +3,8 @@
     <div class="list-group">
       <p class="text-secondary" id="postquantity">
         Quantidade de posts:
-        <span class="badge badge-info">{{ blogs.length }}</span>
+        <span class="badge badge-info">{{ posts.length }}</span>
       </p>
-      <p class="error" v-if="error">{{ error }}</p>
       <Post />
     </div>
   </div>
@@ -15,7 +14,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 import Post from "./Post";
-import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -24,19 +23,14 @@ export default {
   name: "Content",
   data: function() {
     return {
-      baseUrl:
-        "https://gist.githubusercontent.com/leocabrallce/6b54d252d62832de2c6166b08ae7727a/raw/5342daff7ea0b030488943f2cd45455534e30112/noticias.json",
-      blogs: [],
-      error: ""
+      blogs: []
     };
   },
-  async created() {
-    try {
-      const res = await axios.get(this.baseUrl);
-      this.blogs = res.data;
-    } catch (e) {
-      this.error = e.message;
-    }
+  mounted() {
+    this.$store.dispatch("CarregaPost");
+  },
+  computed: {
+    ...mapState(["posts"])
   }
 };
 </script>
