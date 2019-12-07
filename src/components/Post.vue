@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-for="item in posts" :key="item.title">
+    <div v-for="(item, index) in posts" :key="index">
       <section class="list-group-item">
         <h1>{{ item.title }}</h1>
         <p>
           {{ item.content.slice(0, 350) + "..." }}
-          <router-link :to="'/posts/' + item.title[item]">Ler Mais</router-link>
+          <router-link :to="'/posts/' + item.title">Ler Mais</router-link>
         </p>
         <hr />
         <div class="nav flex-column">
