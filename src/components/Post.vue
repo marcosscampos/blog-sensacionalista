@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(item, index) in posts" :key="index">
+    <div v-for="item in posts" v-bind:key="item">
       <section class="list-group-item">
         <h1>{{ item.title }}</h1>
         <p>

@@ -16,7 +16,6 @@ Vue.use(VueRouter)
 /* ==== */
 
 const routes = [
-  { path: '/', component: Post },
   { path: '/post/:id', component: Post }
 ]
 
