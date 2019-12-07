@@ -1,65 +1,56 @@
 <template>
   <div>
-    <div class="list-group" v-for="blog in blogs" v-bind:key="blog.id">
-      <div class="list-group-item">
-        <h4 class="navbar-brand">{{ blog.title }}</h4>
-        <p class="text-justify">
-          <Posts />
-          {{ blog.content.slice(0, 350) + "..." }}
-          <router-link :to="'/post/' + blog.id"> Ler mais </router-link>
+    <div v-for="item in posts" :key="item.title">
+      <section class="list-group-item">
+        <h1>{{ item.title }}</h1>
+        <p>
+          {{ item.content.slice(0, 350) + "..." }}
         </p>
         <hr />
-        <span>
-          Data de criação:
-          {{ blog.date | moment("ddd - DD/MM/YYYY") }}
-        </span>
-        <br />
-        <span> Site original: {{ blog.source }} </span> <br />
-        <span>
-          Quantidade de comentários:
-          <span class="badge badge-info">
-            {{ blog.comments }}
-          </span>
-        </span>
-      </div>
+        <div class="nav flex-column">
+          <li class="nav-item">
+            Data de postagem: {{ item.date | moment("ddd - DD/MM/YYYY") }}
+          </li>
+          <li class="nav-item">Site original: {{ item.source }}</li>
+          <li class="nav-item">
+            Quantidade de comentários:
+            <span class="badge badge-info">{{ item.comments }}</span>
+          </li>
+        </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import Posts from "../components/Posts/Posts";
+import { mapState } from "vuex";
 
 export default {
-  components: {
-    Posts
-  },
   name: "posts",
   data: function() {
     return {
-      baseUrl:
-        "https://gist.githubusercontent.com/leocabrallce/6b54d252d62832de2c6166b08ae7727a/raw/5342daff7ea0b030488943f2cd45455534e30112/noticias.json",
-      blogs: [],
-      error: ""
+      blogs: []
     };
   },
-  async created() {
-    try {
-      const res = await axios.get(this.baseUrl);
-      this.blogs = res.data;
-    } catch (e) {
-      this.error = e.message;
-    }
+  mounted() {
+    this.$store.dispatch("CarregaPost");
+  },
+  computed: {
+    ...mapState(["posts"])
   }
 };
 </script>
 
 <style scoped>
-.list-group {
+h1,
+h4 {
+  font-size: 1.7rem !important;
+}
+
+.list-group-item {
   margin: 10px !important;
   border-radius: 10px !important;
 }
-
 a {
   text-decoration: none;
   color: green;

@@ -22,7 +22,6 @@ export default {
     Post
   },
   name: "Content",
-  props: ["posts"],
   data: function() {
     return {
       baseUrl:
@@ -52,6 +51,7 @@ export default {
   padding-top: 15px;
   padding-left: 12px;
   margin: 0;
+  font-size: 1.7rem;
 }
 
 h1 {

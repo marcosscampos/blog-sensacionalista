@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style scoped>
+.navbar-brand {
+  font-size: 1.7rem;
+}
+
 #photo {
   width: 30px;
   height: 30px;
