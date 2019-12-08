@@ -13,19 +13,12 @@
 <script>
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-import Post from "./Post";
+import Post from "./Post.vue";
 import { mapState } from "vuex";
 
 export default {
-  components: {
-    Post
-  },
+  components:  { Post },
   name: "Content",
-  data: function() {
-    return {
-      blogs: []
-    };
-  },
   mounted() {
     this.$store.dispatch("CarregaPost");
   },
@@ -36,11 +29,6 @@ export default {
 </script>
 
 <style scoped>
-#photo {
-  width: 30px;
-  height: 30px;
-}
-
 #postquantity {
   padding-top: 15px;
   padding-left: 12px;
@@ -51,4 +39,5 @@ export default {
 h1 {
   padding-top: 10px;
 }
+
 </style>

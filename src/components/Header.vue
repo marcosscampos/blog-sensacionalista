@@ -1,20 +1,19 @@
 <template>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a
-        href="https://www.linkedin.com/in/marcos-vinicius-839baa102/"
+      <a href="https://www.linkedin.com/in/marcos-vinicius-839baa102/"
         target="_blank"
         rel="noopener noreferrer"
-        class="navbar-brand"
-      >
-        <img
-          src="../assets/logo.png"
+        class="navbar-brand">
+        <img src="../assets/logo.png"
           id="photo"
-          alt="Marcos Vinicius's LinkedIn"
-        />
+          alt="Marcos Vinicius's LinkedIn"/>
       </a>
       <h1 class="navbar-brand">
-        Blog Sensacionalista <span class="badge badge-info">Em Vue.js</span>
+        Blog Sensacionalista
+        <span class="badge badge-info">
+          Em Vue.js
+        </span>
       </h1>
     </nav>
   </div>
