@@ -1,33 +1,35 @@
 <template>
   <div class="container">
-    <Header />
-    <Content />
-    <Footer />
+  <Header/>
+    <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import Content from "./components/Content.vue";
-import Footer from "./components/footer.vue";
-import Header from "./components/Header.vue";
+  import Footer from "./components/footer.vue";
+  import Header from "./components/Header.vue";
 
 export default {
-  name: "app",
-  components: { Content, Footer, Header }
+    components: {
+      Header,
+      Footer
+    },
+  name: "app"
 };
 </script>
 
-<style scope>
+<style>
 html,
 body {
   box-sizing: border-box;
-  background-color: rgb(232, 252, 237);
+  background-color: rgb(232, 252, 237) !important;
 }
 
 html {
   font-size: 10px;
 }
 body {
-  font-size: 1.6rem;
+  font-size: 1.6em;
 }
 </style>
