@@ -14,7 +14,8 @@ Vue.use(VueRouter);
 /* routing */
 const routes = [
   { path: '/', name: 'Home', component: () => import('./components/Content')},
-  { path: '/integra/:id', name: 'integra', component: () => import('./views/IndividualPosts') }
+  { path: '/posts/', name: 'posts', component: () => import('./components/Post') },
+  { path: '/posts/:id/', name: 'integra', component: () => import('./views/IndividualPosts')},
 ];
 
 const router = new VueRouter({

@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div v-for="(item, index) in posts" v-bind:key="index">
+    <div v-for="(item, index) in posts" v-bind:key="index.id">
       <section class="list-group-item">
         <h1>{{item.title}}</h1>
         <p>
           {{item.content.slice(0, 350) + "..."}}
-        <router-link :to="`/integra/${index}/`">Ler Mais</router-link>
+        <router-link :to="`/posts/${index}/`">
+         Ler Mais
+        </router-link>
           <br>
           <em>Esse link foi clicado {{count}} vezes</em>
         </p>

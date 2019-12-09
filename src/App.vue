@@ -1,6 +1,8 @@
 <template>
   <div class="container">
   <Header/>
+    <span v-if="loading">Loading...</span>
+    <span v-if="error">{{ error }}</span>
     <router-view/>
     <Footer/>
   </div>
@@ -15,7 +17,13 @@ export default {
       Header,
       Footer
     },
-  name: "app"
+  name: "app",
+  data () {
+      return {
+        loading: false,
+        error: null
+      }
+  }
 };
 </script>
 

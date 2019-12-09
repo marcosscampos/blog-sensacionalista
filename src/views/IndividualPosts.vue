@@ -2,7 +2,7 @@
   <div class="container">
     <router-link to="/" class="btn btn-link text-center" id="backhome">Voltar a Home</router-link>
     <article  class="list-group-item text-justify">
-      <div v-for="(blog, index) in Obj" v-bind:key="index">
+      <div v-for="(blog, index) in Obj" v-bind:key="index.id">
       <h1> {{blog.title}} </h1>
       <p>
       {{blog.content}}
