@@ -13,10 +13,14 @@
     "bootstrap": "4.4.1",
     "core-js": "^3.4.3",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
     "moment-timezone": "^0.5.27",
+    "nprogress": "^0.2.0",
     "tb-skeleton": "^0.3.6",
     "vue": "^2.6.10",
     "vue-helmet": "^1.1.5",
+    "vue-loading-overlay": "^3.3.2",
     "vue-material": "^1.0.0-beta-11",
     "vue-moment": "^4.0.0",
     "vue-paginate": "^3.6.0",
@@ -42,18 +46,14 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {
-      "no-console": "off",
-      "no-restricted-syntax": [
-        "error",
-        {
-          "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
-          "message": "Unexpected property on console object was called"
-        }
-      ]
-    },
+    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
     }
   },
   "browserslist": [

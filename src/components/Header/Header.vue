@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container ">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a href="https://www.linkedin.com/in/marcos-vinicius-839baa102/"
         target="_blank"
         rel="noopener noreferrer"
         class="navbar-brand">
-        <img src="../assets/logo.png"
+        <img src="../../assets/logo.png"
           id="photo"
           alt="Marcos Vinicius's LinkedIn"/>
       </a>
@@ -24,8 +24,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 
 export default {
-  name: "Content"
-};
+  };
 </script>
 
 <style scoped>

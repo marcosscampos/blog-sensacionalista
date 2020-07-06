@@ -1,28 +1,23 @@
 <template>
-  <div class="container">
+  <div class="container container__bar">
   <Header/>
-    <span v-if="loading">Loading...</span>
-    <span v-if="error">{{ error }}</span>
     <router-view/>
     <Footer/>
   </div>
 </template>
 
 <script>
-  import Footer from "./components/footer.vue";
-  import Header from "./components/Header.vue";
+  import Footer from "./components/Footer/footer.vue";
+  import Header from "./components/Header/Header.vue";
+  import loadingComponent from "./components/loadingComponent/loading";
 
 export default {
     components: {
       Header,
       Footer
     },
-  name: "app",
-  data () {
-      return {
-        loading: false,
-        error: null
-      }
+  mounted() {
+    loadingComponent.loading()
   }
 };
 </script>
