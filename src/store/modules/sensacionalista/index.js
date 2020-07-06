@@ -17,7 +17,7 @@ const actions = {
     },
 
     async buscarPost({commit}, payload) {
-        await blogSensacionalistaService.buscarPost(payload.id).then(post => {
+        await blogSensacionalistaService.buscarPost(payload.index).then(post => {
             commit(Mutation.BUSCAR_POST_INDIVIDUAL, post)
         }, (reason) => {
             commit(Mutation.BUSCAR_POST_INDIVIDUAL, reason)

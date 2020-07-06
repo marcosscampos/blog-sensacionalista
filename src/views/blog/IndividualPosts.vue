@@ -4,17 +4,17 @@
          ref="contentContainer">
         <router-link to="/" class="btn btn-link text-center" id="backhome">Voltar a Home</router-link>
         <section class="list-group-item text-justify content__section">
-            <h6>{{postBlog.index}}</h6>
-            <h1> {{postBlog.title}} </h1>
+            <h6>{{blogPost.index}}</h6>
+            <h1> {{blogPost.title}} </h1>
             <p>
-                {{postBlog.content}}
+                {{blogPost.content}}
             </p>
             <hr>
         <div class="content__footer">
-            <span>Data de postagem: {{postBlog.date | moment("ddd - DD/MM/YYYY")}}</span>
-            <span>Site original: {{postBlog.source}}</span>
+            <span>Data de postagem: {{blogPost.date | moment("ddd - DD/MM/YYYY")}}</span>
+            <span>Site original: {{blogPost.source}}</span>
             <span>Quantidade de comentários:</span>
-            <span class="badge badge-info">{{postBlog.comments}}</span>
+            <span class="badge badge-info">{{blogPost.comments}}</span>
         </div>
         </section>
     </div>
@@ -39,7 +39,7 @@
         }),
         beforeMount() {
             // this.loading()
-            this.$store.dispatch({type: "blog/buscarPost", id: this.$route.params.id})
+            this.$store.dispatch({type: "blog/buscarPost", index: this.$route.params.index})
         },
         data() {
             return {
@@ -52,7 +52,8 @@
             // eslint-disable-next-line no-unused-vars
             this.$store.subscribe((mutation, state) => {
                 if(mutation.type === 'blog/' + Mutation.BUSCAR_POST_INDIVIDUAL) {
-                    this.loader.hide()
+                    // this.loader.hide()
+                    return null
                 }
             })
         },

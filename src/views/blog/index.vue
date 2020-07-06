@@ -2,7 +2,7 @@
     <div class="bar__container"
          @submit.prevent="loader"
          ref="contentContainer">
-        <div v-for="(item, index) of posts" :key="index">
+        <div v-for="(item, index) in posts" :key="index">
             <section class="list-group-item">
                 <h1>{{item.title}}</h1>
                 <p>

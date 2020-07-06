@@ -30,6 +30,7 @@ body {
 }
 
 html {
+  font-family: 'Calibri', sans-serif;
   font-size: 10px;
 }
 body {
