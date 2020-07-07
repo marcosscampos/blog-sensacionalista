@@ -15,12 +15,6 @@ const blogSensacionalistaService = {
   },
 
   async buscarPost(index) {
-    // return new Promise((callback) => {
-    //   httpClient.get(`${urlApi}/${index} `).then((response) => {
-    //     callback(response.data);
-    //   }).catch(() => {});
-    // });
-
     const response = await httpClient.get(urlApi);
     const posts = response.data;
     return new Promise((callback) => {

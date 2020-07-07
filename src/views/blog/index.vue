@@ -29,6 +29,7 @@ import vue from 'vue';
 import Loading from 'vue-loading-overlay';
 import { mapState } from 'vuex';
 
+import loadingComponent from '../../components/loadingComponent/loading';
 import * as Mutation from '../../store/modules/sensacionalista/mutationTypes';
 
 import 'vue-loading-overlay/dist/vue-loading.css';
@@ -58,6 +59,7 @@ export default {
     this.$router.push({ name: 'post', params: { id } });
   },
   mounted() {
+    loadingComponent.loading();
     // eslint-disable-next-line no-unused-vars
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === `blog/${Mutation.LISTAR_POSTS}`) {

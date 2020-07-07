@@ -17,7 +17,6 @@ const loadingComponent = {
       const postWrap = document.querySelector('.bar__container');
       const textHeight = postWrap.offsetHeight;
       const pagePosition = window.pageYOffset;
-
       // eslint-disable-next-line no-mixed-operators
       const updateBar = pagePosition * 150 / textHeight;
 
