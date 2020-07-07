@@ -39,7 +39,7 @@ vue.use(Loading, {
 
 export default {
   computed: mapState({
-    blogPost: (state) => state.blog.post,
+    blogPost: (state) => state.blog.singlePost,
   }),
   beforeMount() {
     // this.loading()
@@ -52,12 +52,12 @@ export default {
       loader: null,
     };
   },
-  mounted({ callback }) {
+  mounted() {
     const that = this;
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === `blog/${Mutation.BUSCAR_POST_INDIVIDUAL}`) {
         // this.loader.hide()
-        that.postBlog = state.blogPost.post.map((i) => ({
+        that.postBlog = state.blogPost.singlePost.map((i) => ({
           index: i.index,
           title: i.title,
           content: i.content,
@@ -65,9 +65,6 @@ export default {
           source: i.source,
           comments: i.comments,
         }));
-        callback(null, that.postBlog);
-      } else {
-        callback(null, that.postBlog);
       }
     });
   },
