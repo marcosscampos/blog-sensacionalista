@@ -29,6 +29,13 @@ module.exports = {
                 ],
                 alphabetize: { order: 'asc', ignoreCase: true }
             }
+        ],
+        "func-style": [
+          "error",
+          "declaration",
+            {
+                "allowArrowFunctions": true
+            }
         ]
     }
 };
