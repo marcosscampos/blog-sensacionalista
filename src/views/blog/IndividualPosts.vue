@@ -57,14 +57,15 @@ export default {
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === `blog/${Mutation.BUSCAR_POST_INDIVIDUAL}`) {
         // this.loader.hide()
-        that.postBlog = state.blogPost.singlePost.map((i) => ({
-          index: i.index,
-          title: i.title,
-          content: i.content,
-          date: i.date,
-          source: i.source,
-          comments: i.comments,
-        }));
+        // that.postBlog = state.blogPost.singlePost.map((i) => ({
+        //   index: i.index,
+        //   title: i.title,
+        //   content: i.content,
+        //   date: i.date,
+        //   source: i.source,
+        //   comments: i.comments,
+        // }));
+        that.postBlog = state.blog.singlePost;
       }
     });
   },
