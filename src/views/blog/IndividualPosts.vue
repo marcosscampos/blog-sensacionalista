@@ -4,7 +4,6 @@
          ref="contentContainer">
         <router-link to="/" class="btn btn-link text-center" id="backhome">Voltar a Home</router-link>
         <section class="list-group-item text-justify content__section">
-            <h6>{{blogPost.index}}</h6>
             <h1> {{blogPost.title}} </h1>
             <p>
                 {{blogPost.content}}
@@ -39,7 +38,7 @@
         }),
         beforeMount() {
             // this.loading()
-            this.$store.dispatch({type: "blog/buscarPost", index: this.$route.params.index})
+            this.$store.dispatch({type: "blog/buscarPost", index: this.$route.params.id})
         },
         data() {
             return {
@@ -53,7 +52,7 @@
             this.$store.subscribe((mutation, state) => {
                 if(mutation.type === 'blog/' + Mutation.BUSCAR_POST_INDIVIDUAL) {
                     // this.loader.hide()
-                    return null
+                  return null;
                 }
             })
         },

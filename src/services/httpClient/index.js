@@ -1,13 +1,9 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const httpClient = axios.create()
+const httpClient = axios.create();
 
-httpClient.interceptors.request.use(config => {
-    return config
-})
+httpClient.interceptors.request.use((config) => config);
 
-httpClient.interceptors.response.use(response => {
-    return response
-})
+httpClient.interceptors.response.use((response) => response);
 
 export default httpClient;
