@@ -26,11 +26,15 @@ const actions = {
 };
 
 const mutations = {
+  // eslint-disable-next-line no-shadow
   [Mutation.LISTAR_POSTS](state, posts) {
+    // eslint-disable-next-line no-param-reassign
     state.posts = posts;
   },
 
+  // eslint-disable-next-line no-shadow
   [Mutation.BUSCAR_POST_INDIVIDUAL](state, post) {
+    // eslint-disable-next-line no-param-reassign
     state.post = post;
   },
 };

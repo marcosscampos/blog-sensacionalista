@@ -33,8 +33,10 @@
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
-    "babel-eslint": "^10.0.3",
+    "@vue/eslint-plugin": "^4.2.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
+    "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-import-helpers": "^1.0.2",
     "eslint-plugin-vue": "^5.0.0",
@@ -46,7 +48,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/base",
+      "plugin:vue/recommended",
       "eslint-config-airbnb"
     ],
     "rules": {},

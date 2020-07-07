@@ -13,7 +13,7 @@ const router = new Router({
   linkExactActiveClass: 'active',
   routes: [
     { name: 'posts', path: '/', component: posts },
-    { name: 'post', path: '/post/:id?', component: post },
+    { name: 'post', path: '/post/:index?', component: post },
   ],
 });
 

@@ -8,13 +8,13 @@
 
 <script>
 
-    export default {
-        data() {
-            return {
-                date: new Date().getFullYear()
-            }
-        }
+export default {
+  data() {
+    return {
+      date: new Date().getFullYear(),
     };
+  },
+};
 </script>
 
 <style scoped>

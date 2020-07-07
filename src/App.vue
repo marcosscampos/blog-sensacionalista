@@ -7,18 +7,18 @@
 </template>
 
 <script>
-  import Footer from "./components/Footer/footer.vue";
-  import Header from "./components/Header/Header.vue";
-  import loadingComponent from "./components/loadingComponent/loading";
+import Footer from './components/Footer/footer.vue';
+import Header from './components/Header/Header.vue';
+import loadingComponent from './components/loadingComponent/loading';
 
 export default {
-    components: {
-      Header,
-      Footer
-    },
+  components: {
+    Header,
+    Footer,
+  },
   mounted() {
-    loadingComponent.loading()
-  }
+    loadingComponent.loading();
+  },
 };
 </script>
 
