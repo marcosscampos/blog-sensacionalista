@@ -1,9 +1,9 @@
 <template>
-    <div class="content__footer">
+    <v-footer>
         <p>
             Copyright&reg; - {{date}}
         </p>
-    </div>
+    </v-footer>
 </template>
 
 <script>
@@ -18,7 +18,4 @@ export default {
 </script>
 
 <style scoped>
-    .content__footer {
-        text-align: center;
-    }
 </style>

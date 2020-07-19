@@ -3,7 +3,7 @@ const loadingComponent = {
     const bar = document.createElement('div');
 
     bar.style.width = '0';
-    bar.style.backgroundColor = 'green';
+    bar.style.backgroundColor = 'royalblue';
     bar.style.height = '4px';
     bar.style.position = 'fixed';
     bar.style.top = '0';

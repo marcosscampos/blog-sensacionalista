@@ -2,23 +2,31 @@
   <div class="container bar__container"
        @submit.prevent="loader"
        ref="contentContainer">
-    <router-link to="/" class="btn btn-link text-center" id="backhome">Voltar a Home</router-link>
-    <section class="list-group-item text-justify">
-      <h1> {{postBlog.title}} </h1>
-      <p>
-        {{postBlog.content}}
-      </p>
-      <hr>
-      <div class="content__footer">
-        <div>Data de postagem: {{postBlog.date | moment("DD/MM/YYYY")}}</div>
-        <div>Site original: {{postBlog.source}}</div>
-        <div>
-          <p>Quantidade de comentários:
-          <span class="badge badge-info">{{postBlog.comments}}</span>
+    <v-card>
+      <v-btn outlined block color="primary" dark>
+        <router-link to="/">Voltar a Home</router-link>
+      </v-btn>
+      <section>
+        <v-card-title>
+          <h1> {{postBlog.title}} </h1>
+        </v-card-title>
+        <v-card-text>
+          <p>
+            {{postBlog.content}}
           </p>
-        </div>
-      </div>
-    </section>
+        </v-card-text>
+        <hr>
+        <v-card-subtitle>
+          <ul class="nav flex-column">
+            <li class="nav-item">Data de postagem: {{postBlog.date | moment("DD/MM/YYYY")}}</li>
+            <li class="nav-item">Site original: {{postBlog.source}}</li>
+            <li class="nav-item"> Quantidade de comentários:
+              <span class="badge badge-info">{{postBlog.comments}}</span>
+            </li>
+          </ul>
+        </v-card-subtitle>
+      </section>
+    </v-card>
   </div>
 </template>
 
@@ -75,10 +83,21 @@ export default {
 };
 </script>
 <style scoped>
+  * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   a {
-    color: green;
+    /*color: blue;*/
     font-size: 1.5rem !important;
     text-decoration: none !important;
+    transition: 0.75s;
+  }
+
+  a:hover {
+    transition: 0.75s;
+    color: gray !important;
   }
 
   h1, h4 {
@@ -91,10 +110,19 @@ export default {
 
   #backhome {
     padding-top: 10px;
-    padding-bottom: 0;
   }
 
   .content__footer {
     max-height: 100px;
+  }
+
+  ul,
+  li {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .badge-info {
+    width: 25px;
   }
 </style>

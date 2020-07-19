@@ -1,22 +1,19 @@
 <template>
-  <div class="container ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <v-container class="text-center">
+    <v-toolbar class="rounded-lg">
       <a href="https://www.linkedin.com/in/marcos-vinicius-839baa102/"
          target="_blank"
          rel="noopener noreferrer"
-         class="navbar-brand">
+         class="">
         <img src="../../assets/logo.png"
              id="photo"
              alt="Marcos Vinicius's LinkedIn"/>
       </a>
-      <h1 class="navbar-brand">
+      <h1>
         Blog Sensacionalista
-        <span class="badge badge-info">
-          Em Vue.js
-        </span>
       </h1>
-    </nav>
-  </div>
+    </v-toolbar>
+  </v-container>
 </template>
 
 <script>
@@ -27,8 +24,8 @@ export default {};
 </script>
 
 <style scoped>
-  .navbar-brand {
-    font-size: 1.7rem;
+  * {
+    padding: 0 !important;
   }
 
   #photo {
@@ -40,7 +37,7 @@ export default {};
     padding-top: 10px;
   }
 
-  nav {
-    background-color: rgb(197, 253, 208) !important;
+  a {
+    margin-right: 10px;
   }
 </style>

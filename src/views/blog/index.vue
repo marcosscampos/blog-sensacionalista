@@ -2,25 +2,31 @@
   <div class="bar__container"
        @submit.prevent="loader"
        ref="contentContainer">
-    <div v-for="(item, index) in posts" :key="index">
-      <section class="list-group-item">
-        <h1>{{item.title}}</h1>
-        <p>
-          {{item.content.slice(0, 350) + "..."}}
-          <router-link :to='`/post/${index}`'>
-            Ler Mais
-          </router-link>
-        </p>
+    <v-card v-for="(item, index) in posts" :key="index">
+      <section>
+        <v-card-title>
+          <h1>{{item.title}}</h1>
+        </v-card-title>
+        <v-card-text>
+          <p>
+            {{item.content.slice(0, 350) + "..."}}
+            <router-link :to='`/post/${index}`'>
+              Ler Mais
+            </router-link>
+          </p>
+        </v-card-text>
         <hr>
-        <ul class="nav flex-column">
-          <li class="nav-item">Data de Postagem: {{item.date | moment("ddd - DD/MM/YYYY")}}</li>
-          <li class="nav-item">Site original: {{item.source}}</li>
-          <li class="nav-item">Quantidade de comentários:
-            <span class="badge badge-info">{{item.comments}}</span>
-          </li>
-        </ul>
+        <v-card-subtitle>
+          <ul class="nav flex-column">
+            <li class="nav-item">Data de Postagem: {{item.date | moment("ddd - DD/MM/YYYY")}}</li>
+            <li class="nav-item">Site original: {{item.source}}</li>
+            <li class="nav-item">Quantidade de comentários:
+              <span class="badge badge-info">{{item.comments}}</span>
+            </li>
+          </ul>
+        </v-card-subtitle>
       </section>
-    </div>
+    </v-card>
   </div>
 </template>
 
@@ -95,22 +101,32 @@ export default {
     font-size: 1.7rem !important;
   }
 
-  .list-group-item {
+  section {
     margin: 10px !important;
     border-radius: 10px !important;
   }
 
   a {
     text-decoration: none !important;
-    color: green;
+    color: royalblue;
+    transition: 0.75s;
+  }
+
+  a:hover {
+    color: gray;
+    transition: 0.75s;
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: normal;
+    text-align: justify;
+    margin-bottom: 0;
   }
 
   ul,
   li {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
   }
 </style>
