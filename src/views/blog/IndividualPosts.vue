@@ -105,15 +105,8 @@ export default {
   }
 
   p {
-    font-size: 1.4rem;
-  }
-
-  #backhome {
-    padding-top: 10px;
-  }
-
-  .content__footer {
-    max-height: 100px;
+    font-size: 1.3rem;
+    text-align: justify;
   }
 
   ul,
