@@ -15,7 +15,7 @@
     "eslint-config-airbnb": "^18.2.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.0",
     "moment-timezone": "^0.5.27",
     "nprogress": "^0.2.0",
     "tb-skeleton": "^0.3.6",
