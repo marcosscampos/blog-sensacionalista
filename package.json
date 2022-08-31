@@ -16,7 +16,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "jquery-ui": "^1.12.1",
-    "moment-timezone": "^0.5.27",
+    "moment-timezone": "^0.5.35",
     "nprogress": "^0.2.0",
     "tb-skeleton": "^0.3.6",
     "vue": "^2.6.10",
